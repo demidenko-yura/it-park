@@ -11,7 +11,8 @@ public class CelsiusTemperature extends Temperature {
         return switch (to) {
             case KELVIN -> convertToKelvin();
             case FAHRENHEIT -> convertToFahrenheit();
-            default -> new CelsiusTemperature(value);
+            case CELSIUS -> new CelsiusTemperature(value);
+            default -> throw new UnsupportedOperationException(String.format("Converting from %s to %s is not supported", type, to));
         };
     }
 
